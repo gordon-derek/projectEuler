@@ -26,10 +26,16 @@ public class P18 {
 
         try {
             triFile = new BufferedReader(new FileReader(new File(filename)));
-            int lines = getTriDepth(triFile);
-
-            triangle = new int[lines][lines];
-
+            int depth = getTriDepth(new BufferedReader(new FileReader(new File(filename))));
+            triangle = new int[depth][depth];
+            String line = triFile.readLine();
+            String piece[];
+            for(int i = 0; i < depth; i++){
+                piece = line.split(" ");
+                for(int j = 0; j < piece.length; j++)
+                    triangle[i][j] = Integer.parseInt(piece[j]);
+                line = triFile.readLine();
+            }
 
             triFile.close();
 
