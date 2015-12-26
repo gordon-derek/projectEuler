@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by Derek on 12/24/2015.
  */
-public class P18 {
+public class P18_67 {
 
     //Gets triangle depth from counting the lines in file
     private static int getTriDepth(BufferedReader triFile){
@@ -51,7 +51,22 @@ public class P18 {
         return triangle;
     }
 
+    //calculates max path from the bottom up by calculating max at each level.
+    private static int calcMaxPath(int triangle[][]){
+        int depth = triangle.length;
+        for(int i = depth-2; i >= 0; i--){
+            for(int j = 0; j <= i; j++){
+                triangle[i][j] += Math.max(triangle[i+1][j], triangle[i+1][j+1]);
+            }
+        }
+
+        return triangle[0][0];
+    }
+
     public static void main(String[] args){
-        int triangle[][] = getTriangleFromText(args[0]);
+        for(int i = 0; i < args.length; i++) {
+            int triangle[][] = getTriangleFromText(args[i]);
+            System.out.println(calcMaxPath(triangle));
+        }
     }
 }
