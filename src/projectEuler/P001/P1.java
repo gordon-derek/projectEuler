@@ -1,7 +1,7 @@
 // Derek Gordon
 // 12/21/2015
 
-package projectEuler.P1;
+package projectEuler.P001;
 
 public class P1 {
 	private final static int MAX = 1000;

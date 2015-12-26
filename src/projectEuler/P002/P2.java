@@ -1,4 +1,4 @@
-package projectEuler.P2;
+package projectEuler.P002;
 
 /**
  * Derek Gordon

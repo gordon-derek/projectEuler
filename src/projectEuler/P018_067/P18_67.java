@@ -1,4 +1,4 @@
-package projectEuler.P18_67;
+package projectEuler.P018_067;
 
 import java.io.BufferedReader;
 import java.io.File;
