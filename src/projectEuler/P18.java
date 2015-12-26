@@ -10,12 +10,14 @@ import java.io.IOException;
  */
 public class P18 {
 
+    //Gets triangle depth from counting the lines in file
     private static int getTriDepth(BufferedReader triFile){
+        int sum = 0;
         try {
-            if (triFile.readLine() != null)
-                return 1 + getTriDepth(triFile);
+            while(triFile.readLine() != null)
+                sum++;
         }catch(IOException e){e.printStackTrace();}
-        return 0;
+        return sum;
     }
 
     //Pre: filename has been passed into program as argument
